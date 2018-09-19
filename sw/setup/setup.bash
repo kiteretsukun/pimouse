@@ -19,6 +19,12 @@ wait_sw () {
 	chmod 666 /dev/rt*
 
 	echo 0 > /dev/rtmotoren0
+	
+	###LED‚ğÁ‚·###
+	echo 0 | tee /dev/rtled?
+	###ƒ‚[ƒ^[‚ğ~‚ß‚é###
+	echo 0 | tee /dev/rtmotor[_e]*
+	
 }
 
 while :
