@@ -18,7 +18,9 @@ wait_sw () {
 	sleep 1
 	chmod 666 /dev/rt*
 
-	echo 0 > /dev/rtmotoren0
+	### run the main script ###
+	chmod a+x /home/pi/pimouse/sw/run/main.bash
+	sudo -u pi /home/pi/pimouse/sw/run/main.bash > /dev/null 2> /dev/null &
 	
 	###LED‚ğÁ‚·###
 	echo 0 | tee /dev/rtled?
