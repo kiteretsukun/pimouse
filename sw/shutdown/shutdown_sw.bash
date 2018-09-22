@@ -1,6 +1,6 @@
 #!/bin/bash -xv
 
-#exec &> /tmp/switch.log
+#exec &> /run/shm/shutdown.log
 exec &> /dev/null
 
 GPIO=21
@@ -10,7 +10,7 @@ echo "$GPIO" > /sys/class/gpio/export
 
 wait_sw () {
 	
-	exec 2> /tmp/shutdown_sw.log
+	exec 2> /run/shm/shutdown_sw.log
 	sudo shutdown -h now
 }
 

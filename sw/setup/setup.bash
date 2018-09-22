@@ -1,6 +1,6 @@
 #!/bin/bash -xv
 
-#exec &> /tmp/switch.log
+#exec &> /run/shm/setup.log
 exec &> /dev/null
 
 GPIO=20
@@ -10,7 +10,7 @@ echo "$GPIO" > /sys/class/gpio/export
 
 wait_sw () {
 	
-	exec 2> /tmp/setup.log
+	exec 2> /run/shm/setup.log
 
 	cd /home/pi/RaspberryPiMouse/src/drivers/
 	/sbin/insmod rtmouse.ko
